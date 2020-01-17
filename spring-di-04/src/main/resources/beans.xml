@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.qiaoyn.pojo.Address">
+        <property name="address" value="beijing"></property>
+    </bean>
+    <bean id="student" class="com.qiaoyn.pojo.Student">
+        <!--普通值注入-->
+        <property name="name" value="乔亚南"></property>
+        <!--bean注入-->
+        <property name="address" ref="address"></property>
+        <!--数组注入-->
+        <property name="books">
+          <array>
+              <value>红楼梦</value>
+              <value>西游记</value>
+          </array>
+        </property>
+        <!--list注入-->
+        <property name="hobbys">
+            <list>
+                <value>吃饭</value>
+                <value>睡觉</value>
+            </list>
+        </property>
+        <!--map注入-->
+        <property name="card">
+            <map>
+                <entry key="银行卡" value="111111"></entry>
+                <entry key="身份证" value="2222万22"></entry>
+            </map>
+        </property>
+        <!--set注入-->
+        <property name="games">
+            <set>
+                <value>lol</value>
+                <value>bob</value>
+            </set>
+        </property>
+        <!--null注入-->
+        <property name="wife">
+            <null />
+        </property>
+        <!--Properties注入-->
+        <property name="info">
+            <props>
+                <prop key="学号">20154091101</prop>
+                <prop key="username">root</prop>
+                <prop key="password">root</prop>
+            </props>
+        </property>
+    </bean>
+
+
+</beans>

@@ -1,0 +1,26 @@
+###
+ssm整合：
+    spring-dao.xml:负责spring与mybatis整合
+        1.配置数据库连接池
+        2.配置SqlSessionFactory对象
+        3.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中
+    spring-mvc.xml:负责spring与springmvc整合
+        1.开启SpringMVC注解模式(处理器映射器,处理器适配器)
+        2.静态资源默认servlet配置
+        3.视图解析器
+        4.扫描web相关的bean(controller层)
+    spring-service.xml:负责事务的控制
+        1.扫描service包下所有使用注解的类型
+        2.配置事务管理器
+        3.配置基于注解的声明式事务
+    mybatis-config.xml:
+        1.开启驼峰命名转换
+        2.使用列别名替换列名
+        3.使用jdbc的getGeneratedKeys获取数据库自增主键值
+    log4j.properties:
+        打印日志文件  
+    jdbc.properties:
+        数据库连接配置信息  
+    web.xml:
+        1.配置springMVC需要加载的配置文件    
+        2.默认匹配所有的请求             
